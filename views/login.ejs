@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!---Coding By CoderGirl | www.codinglabweb.com--->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form | CoderGirl</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="css/style_log.css">
+  <script type="module" src="/js/log.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="login form">
+      <header>Login</header>
+      <form action="/checklogin" method="get">
+
+          <input type="email" placeholder="Enter Email" id="contact-email" name="email" onkeyup="validateEmail()">
+          <span id="email-error" style="color:red"></span>
+        
+        
+        
+          <input type="password" placeholder="Enter your password" id="password" name="password" onkeyup="validatePassword()">
+          <span id="password-error" style="color:red"></span>
+
+          
+      
+
+        <a href="#">Forgot password?</a>
+        
+        <!-- <input type="button" class="button" value="Login"> -->
+
+        <button onclick="return validateForm()" class="button" value="Login" >Login</button>
+
+        <div>
+          <span id="submit-error"></span>
+        </div>
+        
+
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+         <label for="check">Signup</label>
+        </span>
+      </div>
+    </div>
+
+
+
+    <div class="registration form">
+      <header>Signup</header>
+      <form action="/savecredentials" method="post" >
+        <input type="text" placeholder="Enter your email">
+        <input type="password" placeholder="Create a password">
+        <input type="password" placeholder="Confirm your password">
+
+
+        <!-- <input type="button" class="button" value="Signup"> -->
+        <button onclick="" class="button" value="Signup" >Signup</button>
+        <span id="submit-error"></span>
+
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+         <label for="check">Login</label>
+        </span>
+      </div>
+    </div>
+  </div>
+
+   <script src="/js/log.js"></script>
+</body>
+</html>

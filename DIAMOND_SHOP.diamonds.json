@@ -1,0 +1,500 @@
+[{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d55"
+  },
+  "product_id": 1,
+  "carat": 0.23,
+  "cut": "Ideal",
+  "color": "E",
+  "price": 326
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d56"
+  },
+  "product_id": 2,
+  "carat": 0.21,
+  "cut": "Premium",
+  "color": "E",
+  "price": 326
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d57"
+  },
+  "product_id": 3,
+  "carat": 0.23,
+  "cut": "Good",
+  "color": "E",
+  "price": 327
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d58"
+  },
+  "product_id": 4,
+  "carat": 0.29,
+  "cut": "Premium",
+  "color": "I",
+  "price": 334
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d59"
+  },
+  "product_id": 5,
+  "carat": 0.31,
+  "cut": "Good",
+  "color": "J",
+  "price": 335
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d5a"
+  },
+  "product_id": 6,
+  "carat": 0.24,
+  "cut": "Very Good",
+  "color": "J",
+  "price": 336
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d5b"
+  },
+  "product_id": 7,
+  "carat": 0.24,
+  "cut": "Very Good",
+  "color": "I",
+  "price": 336
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d5c"
+  },
+  "product_id": 8,
+  "carat": 0.26,
+  "cut": "Very Good",
+  "color": "H",
+  "price": 337
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d5d"
+  },
+  "product_id": 9,
+  "carat": 0.22,
+  "cut": "Fair",
+  "color": "E",
+  "price": 337
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d5e"
+  },
+  "product_id": 10,
+  "carat": 0.23,
+  "cut": "Very Good",
+  "color": "H",
+  "price": 338
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d5f"
+  },
+  "product_id": 11,
+  "carat": 0.3,
+  "cut": "Good",
+  "color": "J",
+  "price": 339
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d60"
+  },
+  "product_id": 12,
+  "carat": 0.23,
+  "cut": "Ideal",
+  "color": "J",
+  "price": 340
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d61"
+  },
+  "product_id": 13,
+  "carat": 0.22,
+  "cut": "Premium",
+  "color": "F",
+  "price": 342
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d62"
+  },
+  "product_id": 14,
+  "carat": 0.31,
+  "cut": "Ideal",
+  "color": "J",
+  "price": 344
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d63"
+  },
+  "product_id": 15,
+  "carat": 0.2,
+  "cut": "Premium",
+  "color": "E",
+  "price": 345
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d64"
+  },
+  "product_id": 16,
+  "carat": 0.32,
+  "cut": "Premium",
+  "color": "E",
+  "price": 345
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d65"
+  },
+  "product_id": 17,
+  "carat": 0.3,
+  "cut": "Ideal",
+  "color": "I",
+  "price": 348
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d66"
+  },
+  "product_id": 18,
+  "carat": 0.3,
+  "cut": "Good",
+  "color": "J",
+  "price": 351
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d67"
+  },
+  "product_id": 19,
+  "carat": 0.3,
+  "cut": "Good",
+  "color": "J",
+  "price": 351
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d68"
+  },
+  "product_id": 20,
+  "carat": 0.3,
+  "cut": "Very Good",
+  "color": "J",
+  "price": 351
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d69"
+  },
+  "product_id": 21,
+  "carat": 0.23,
+  "cut": "Very Good",
+  "color": "E",
+  "price": 352
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d6a"
+  },
+  "product_id": 22,
+  "carat": 0.23,
+  "cut": "Very Good",
+  "color": "H",
+  "price": 353
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d6b"
+  },
+  "product_id": 23,
+  "carat": 0.31,
+  "cut": "Very Good",
+  "color": "J",
+  "price": 353
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d6c"
+  },
+  "product_id": 24,
+  "carat": 0.31,
+  "cut": "Very Good",
+  "color": "J",
+  "price": 353
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d6d"
+  },
+  "product_id": 25,
+  "carat": 0.23,
+  "cut": "Very Good",
+  "color": "G",
+  "price": 354
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d6e"
+  },
+  "product_id": 26,
+  "carat": 0.24,
+  "cut": "Premium",
+  "color": "I",
+  "price": 355
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d6f"
+  },
+  "product_id": 27,
+  "carat": 0.3,
+  "cut": "Very Good",
+  "color": "J",
+  "price": 357
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d70"
+  },
+  "product_id": 28,
+  "carat": 0.23,
+  "cut": "Very Good",
+  "color": "D",
+  "price": 357
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d71"
+  },
+  "product_id": 29,
+  "carat": 0.23,
+  "cut": "Very Good",
+  "color": "F",
+  "price": 357
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d72"
+  },
+  "product_id": 30,
+  "carat": 0.23,
+  "cut": "Very Good",
+  "color": "F",
+  "price": 402
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d73"
+  },
+  "product_id": 31,
+  "carat": 0.23,
+  "cut": "Very Good",
+  "color": "F",
+  "price": 402
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d74"
+  },
+  "product_id": 32,
+  "carat": 0.23,
+  "cut": "Very Good",
+  "color": "E",
+  "price": 402
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d75"
+  },
+  "product_id": 33,
+  "carat": 0.23,
+  "cut": "Very Good",
+  "color": "E",
+  "price": 402
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d76"
+  },
+  "product_id": 34,
+  "carat": 0.23,
+  "cut": "Very Good",
+  "color": "D",
+  "price": 402
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d77"
+  },
+  "product_id": 35,
+  "carat": 0.23,
+  "cut": "Good",
+  "color": "F",
+  "price": 402
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d78"
+  },
+  "product_id": 36,
+  "carat": 0.23,
+  "cut": "Good",
+  "color": "E",
+  "price": 402
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d79"
+  },
+  "product_id": 37,
+  "carat": 0.31,
+  "cut": "Good",
+  "color": "H",
+  "price": 402
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d7a"
+  },
+  "product_id": 38,
+  "carat": 0.26,
+  "cut": "Very Good",
+  "color": "D",
+  "price": 403
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d7b"
+  },
+  "product_id": 39,
+  "carat": 0.33,
+  "cut": "Ideal",
+  "color": "I",
+  "price": 403
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d7c"
+  },
+  "product_id": 40,
+  "carat": 0.33,
+  "cut": "Ideal",
+  "color": "I",
+  "price": 403
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d7d"
+  },
+  "product_id": 41,
+  "carat": 0.33,
+  "cut": "Ideal",
+  "color": "J",
+  "price": 403
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d7e"
+  },
+  "product_id": 42,
+  "carat": 0.26,
+  "cut": "Good",
+  "color": "D",
+  "price": 403
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d7f"
+  },
+  "product_id": 43,
+  "carat": 0.26,
+  "cut": "Good",
+  "color": "D",
+  "price": 403
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d80"
+  },
+  "product_id": 44,
+  "carat": 0.32,
+  "cut": "Good",
+  "color": "H",
+  "price": 403
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d81"
+  },
+  "product_id": 45,
+  "carat": 0.29,
+  "cut": "Premium",
+  "color": "F",
+  "price": 403
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d82"
+  },
+  "product_id": 46,
+  "carat": 0.32,
+  "cut": "Very Good",
+  "color": "H",
+  "price": 403
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d83"
+  },
+  "product_id": 47,
+  "carat": 0.25,
+  "cut": "Very Good",
+  "color": "E",
+  "price": 404
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d84"
+  },
+  "product_id": 48,
+  "carat": 0.29,
+  "cut": "Very Good",
+  "color": "H",
+  "price": 404
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d85"
+  },
+  "product_id": 49,
+  "carat": 0.24,
+  "cut": "Very Good",
+  "color": "F",
+  "price": 404
+},
+{
+  "_id": {
+    "$oid": "64ef8b591d67703c89970d86"
+  },
+  "product_id": 50,
+  "carat": 0.23,
+  "cut": "Ideal",
+  "color": "G",
+  "price": 404
+}]
