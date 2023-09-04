@@ -1,35 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- mobile metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <!-- site metas -->
-    <title>Basket</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="/public/assetes/css/bootstrap.min.css">
-    <!-- style css -->
-    <link rel="stylesheet" href="/public/assetes/css/style.css">
-    <!-- Responsive-->
-    <link rel="stylesheet" href="/public/assetes/css/responsive.css">
-    <!-- fevicon -->
-    <link rel="icon" href="/public/assetes/images/fevicon.png" type="image/gif" />
-    <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="/public/assetes/css/jquery.mCustomScrollbar.min.css">
-    <!-- Tweaks for older IEs-->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Basket</title>
+   <%-include('layouts/header'); -%>
+
 </head>
 <body>
    <h1>Basket Page</h1>
@@ -41,45 +15,7 @@
            </li>
        <% }); %>
    </ul>
-   <!--  footer -->
-   <footer>
-      <div class="footer">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="call_now2">
-                     <h3>Free Multipurpose Responsive </h3>
-                     <span>Landing Page 2019</span>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="call_now">
-                     <h3>Call Now</h3>
-                     <span>(+1)1234567890</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="copyright">
-            <div class="container">
-               <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
-            </div>
-         </div>
-      </div>
-   </footer>
-   <!-- end footer -->
-   <!-- Javascript files-->
-   <script src="/public/js/jquery.min.js"></script>
-   <script src="/public/js/popper.min.js"></script>
-   <script src="/public/js/bootstrap.bundle.min.js"></script>
-   <script src="/public/js/jquery-3.0.0.min.js"></script>
-   <script src="/public/js/plugin.js"></script>
-   <script src="/public/js/basket.js"></script>
-   <!-- sidebar -->
-   <script src="/public/js/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script src="/public/js/custom.js"></script>
-   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-   
-
+   <%- include('layouts/footer'); -%>
+   <%- include('layouts/scripts'); -%>
 </body>
 </html>

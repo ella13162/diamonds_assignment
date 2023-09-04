@@ -3,7 +3,7 @@
 Adjusting all files and index.js to ejs format:
     example:
         
-        >home.html => home.ejs
+        >home.html => home
              
         ---js
         app.get("/contact", (req, res) => {
@@ -13,5 +13,6 @@ Adjusting all files and index.js to ejs format:
     
 # Step 2:
 
-Creating layouts folder where will be located my headers, footers and scripts which will help in case any future necessary edits.
+Creating layouts folder where will be located my headers,navbar, footers and scripts which will help in case any future necessary edits.
 
+It is necessary to update all pages with the same layouts code.
