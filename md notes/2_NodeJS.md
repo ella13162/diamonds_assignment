@@ -1,16 +1,16 @@
-nStep 1:
+# Step 1:
 Find CSS template that will suit the dataset and project.
 
-Step 2: 
+# Step 2: 
 Project initialization:
     Initialise project using **npm init** command. This will create the package.json file.
     
     npm init ~y is for default values
 
-Step 3:
+# Step 3:
 Create **index.js** file.
 
-Step 3:
+# Step 3:
 Create http server by writing the following code in index.js
 This code task is to crete Server with request and response method that will be assign to the server number 3000.
 

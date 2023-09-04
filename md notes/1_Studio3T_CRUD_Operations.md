@@ -1,8 +1,8 @@
-OPERATIONS IN STUDIO 3T:
+## OPERATIONS IN STUDIO 3T:
 
-Step 1:
+# Step 1:
 Import the dataset (csv) to mongodb using mongo db compass
-Step 2:
+# Step 2:
 Make it a default database if is already exist, else create it using the same USE command:
 
 "" 
@@ -20,7 +20,7 @@ db.diamonds.find({}).sort({price : -1}); // descending order
 
 ""
 
-Step 3:
+# Step 3:
 Crud operations:
 
 ""
@@ -46,7 +46,7 @@ db.diamonds.insertOne({
 
 
 ""
-Relational Operators in MongoDB:
+## Relational Operators in MongoDB:
 Relational operators are:
 -- $eq => equal to
 -- $gt => greater than

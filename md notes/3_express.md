@@ -1,11 +1,11 @@
-Step 1: 
+# Step 1: 
 Installing **express** command:
     
     'npm install express' command write in terminal.
 
     When express is installed file packadge-lock.json is created, the same as new folded node_module with necessary files.
 
-Step 2:
+# Step 2:
 Installing **nodeman** command:
 
     'npm install nodemon --save-dev' command write in terminal.
@@ -19,7 +19,7 @@ After script edit and changes are saved. It is important to start server with:
 
     'npm start'
 
-Step 3:
+# Step 3:
 Create an express project.
 
 In index.js write code:
@@ -43,7 +43,7 @@ app.listen(4000, () =>{
 
 Previous code that was in the index.js file has to be comment out as it was a code that worked before express was installed.
 
-Step 4:
+# Step 4:
 
 Index.js editing code:
 
