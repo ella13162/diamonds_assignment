@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Basket</title>
-   <%- include('layouts/header'); -%>
+  <title>Products</title>
+  <%- include('layouts/header'); -%>
 </head>
 <body>
-    <h1>Product Page</h1>
-    <ul>
-        <% products.forEach(product => { %>
-            <li>
-                Product ID: <%= product.product_id %>, 
-                Carat: <%= product.carat %>, 
-                Cut: <%= product.cut %>, 
-                Color: <%= product.color %>, 
-                Price: <%= product.price %>
-            </li>
-        <% }); %>
-    </ul>
-    <%- include('layouts/footer'); -%>
-    <%- include('layouts/scripts'); -%>
+
+  <!-- Display images at the top -->
+  <div style="text-align:center;">
+    <img src="/images/beimg.png" alt="Image 1">
+    <img src="/images/beimg2.png" alt="Image 2">
+    <img src="/images/beimg3.png" alt="Image 3">
+  </div>
+
+  <h1>Product Page</h1>
+
+  <!-- List of Products -->
+  <ul>
+      <% products.forEach(product => { %>
+          <li>
+              Product ID: <%= product.product_id %>, 
+              Carat: <%= product.carat %>, 
+              Cut: <%= product.cut %>, 
+              Color: <%= product.color %>, 
+              Price: <%= product.price %>
+          </li>
+      <% }); %>
+  </ul>
+
+  <%- include('layouts/footer'); -%>
+  <%- include('layouts/scripts'); -%>
+
 </body>
 </html>

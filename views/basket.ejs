@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Basket</title>
-   <%-include('layouts/header'); -%>
-
+    <title>Basket</title>
+    <%- include('layouts/header'); -%>
 </head>
 <body>
-   <h1>Basket Page</h1>
-   <ul>
-       <% basketItems.forEach(item => { %>
-           <li>
-               Product: <%= item.product.product_id %>,
-               Quantity: <%= item.quantity %>
-           </li>
-       <% }); %>
-   </ul>
-   <%- include('layouts/footer'); -%>
-   <%- include('layouts/scripts'); -%>
+    <h1>Basket Page</h1>
+    <ul id="basket-items">
+        <% if (basketItems.length === 0) { %>
+            <li>No items in the basket.</li>
+        <% } else { %>
+            <% basketItems.forEach(item => { %>
+                <li>
+                    Product: <%= item.product.product_id %>,
+                    Quantity: <%= item.quantity %>
+                </li>
+            <% }); %>
+        <% } %>
+    </ul>
+    <div>Total: $<span id="basket-total">0.00</span></div>
+    <%- include('layouts/footer'); -%>
+    <%- include('layouts/scripts'); -%>
+    <script src="/js/basket.js"></script>
 </body>
 </html>
+
