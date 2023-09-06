@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-<!---Coding By CoderGirl | www.codinglabweb.com--->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Login & Registration Form | CoderGirl</title>
-  <!---Custom CSS File--->
-  <link rel="stylesheet" href="css/style_log.css">
-  <script type="module" src="/js/log.js"></script>
-
+  <title>Login & Registration Page</title>
+  <%- include('layouts/header'); -%>
+  
 </head>
 <body>
 
@@ -17,29 +11,19 @@
     <input type="checkbox" id="check">
     <div class="login form">
       <header>Login</header>
-      <form action="/checklogin" method="get">
+      <form action="/checklogin" method="post">
 
           <input type="email" placeholder="Enter Email" id="contact-email" name="email" onkeyup="validateEmail()">
           <span id="email-error" style="color:red"></span>
         
-        
-        
           <input type="password" placeholder="Enter your password" id="password" name="password" onkeyup="validatePassword()">
           <span id="password-error" style="color:red"></span>
 
-          
-      
-
-        <a href="#">Forgot password?</a>
-        
-        <!-- <input type="button" class="button" value="Login"> -->
-
-        <button onclick="return validateForm()" class="button" value="Login" >Login</button>
-
-        <div>
-          <span id="submit-error"></span>
-        </div>
-        
+          <a href="#">Forgot password?</a>
+          <button onclick="return validateForm()" class="button" value="Login">Login</button>
+          <div>
+            <span id="submit-error"></span>
+          </div>
 
       </form>
       <div class="signup">
@@ -49,20 +33,14 @@
       </div>
     </div>
 
-
-
     <div class="registration form">
       <header>Signup</header>
-      <form action="/savecredentials" method="post" >
-        <input type="text" placeholder="Enter your email">
-        <input type="password" placeholder="Create a password">
-        <input type="password" placeholder="Confirm your password">
-
-
-        <!-- <input type="button" class="button" value="Signup"> -->
-        <button onclick="" class="button" value="Signup" >Signup</button>
+      <form action="/savecredentials" method="post">
+        <input type="text" placeholder="Enter your email" name="email">
+        <input type="password" placeholder="Create a password" name="password">
+        <input type="password" placeholder="Confirm your password" name="confirm_password">
+        <button class="button" value="Signup">Signup</button>
         <span id="submit-error"></span>
-
       </form>
       <div class="signup">
         <span class="signup">Already have an account?
@@ -72,6 +50,8 @@
     </div>
   </div>
 
-   <script src="/js/log.js"></script>
+  <%- include('layouts/footer'); -%>
+  <%- include('layouts/scripts'); -%>
+  <script src="/public/js/log.js"></script>
 </body>
 </html>
