@@ -16,9 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({ secret: 'your-secret-key', resave: false, saveUninitialized: true }));
 
 // Database connection
-mongoose.connect('mongodb://localhost:27017/DIAMOND_SHOP', {
+mongoose.connect('mongodb://127.0.0.1:27017/DIAMOND_SHOP', {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+ // useUnifiedTopology: true,
 });
 
 // express session 
@@ -31,14 +31,20 @@ app.use(session({
 
 
 // Set view engine and static folder
+app.use(express.static('public'));
+// app.use(express.static(path.join(__dirname, 'public')));
+const ejs = require('ejs')
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
+// app.set('views', path.join(__dirname, 'views'));
+
 
 // Routes
-app.get('/', async (req, res) => {
-  const products = await Product.find();
-  res.render('products', { products });
+app.get('/', (req, res) => {
+ // const products = await Product.find();
+ // console.log(products);
+ // res.render('products', { products: products });
+// console.log("hi")
+ res.render('home');
 });
 
 app.get('/product/:id', async (req, res) => {
@@ -102,14 +108,14 @@ app.get('/basket', (req, res) => {
 });
 
 // Error Routes
-app.use((req, res) => {
-  res.status(404).render('error', { errorMessage: 'Page not found' });
-});
+// app.use((req, res) => {
+//   res.status(404).render('error', { errorMessage: 'Page not found' });
+// });
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).render('error', { errorMessage: 'Something broke!' });
-});
+// app.use((err, req, res, next) => {
+//   console.error(err.stack);
+//   res.status(500).render('error', { errorMessage: 'Something broke!' });
+// });
 
 // Start server
 app.listen(port, () => {

@@ -5,9 +5,9 @@ const productSchema = new mongoose.Schema({
   carat: Number,
   cut: String,
   color: String,
-  price: Number,
+  price: Number
 });
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model('diamonds', productSchema, 'diamonds');
 
 module.exports = { Product };
