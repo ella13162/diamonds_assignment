@@ -4,11 +4,13 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator');
 const session = require('express-session');
-const { Product } = require('./models/products');
-const { Users } = require('./models/users');
-
 const app = express();
 const port = process.env.PORT || 4000;
+
+// Inport Controllers
+const homeController = require('./controllers/homeController'); // Import the homeController
+const productController = require('./controllers/productController');
+const userController = require('./controllers/userController');
 
 // Middleware
 app.use(express.json());
@@ -23,12 +25,27 @@ mongoose.connect('mongodb://127.0.0.1:27017/DIAMOND_SHOP', {
 
 // express session 
 app.use(session({
-  secret: 'mySecret',
+  secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } 
-}));
+  //cookie: { secure: true }
+}))
 
+global.loggedIn = null;
+global.userType = null;
+
+
+app.use("*", (req,res,next)=>{
+  // console.log("Session middleware")
+  loggedIn = req.session.userId;
+  userType = req.session.userType;
+  next();
+})
+
+/* 
+Public folder serves the statis files like css, js, pics etc. We will create a public folder and put all our statis files there.
+Just add the below middlewear that let the express which folder contains the static files
+*/
 
 // Set view engine and static folder
 app.use(express.static('public'));
@@ -37,8 +54,17 @@ const ejs = require('ejs')
 app.set('view engine', 'ejs');
 // app.set('views', path.join(__dirname, 'views'));
 
+/*
+// To receive the parameter, we need to install the body-parser package
+ npm install body-parser
+const bodyParser = require('body-parser')
+    app.use(bodyParser.json())
+    app.use(bodyParser.urlencoded({extended:true}))
+*/
 
 // Routes
+
+/*
 app.get('/', (req, res) => {
  // const products = await Product.find();
  // console.log(products);
@@ -47,10 +73,10 @@ app.get('/', (req, res) => {
  res.render('home');
 });
 
-app.get('/product/:id', async (req, res) => {
+app.get('/products/:id', async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id); // Retrieve the product by its ID
-    res.render('product', { product: product });
+    const products = await Product.findById(req.params.id); // Retrieve the product by its ID
+    res.render('products', { products: products});
   } catch (error) {
     console.log(error);
     res.status(500).render('error', { errorMessage: 'No such product!' });
@@ -59,10 +85,6 @@ app.get('/product/:id', async (req, res) => {
 
 app.get('/contact', (req, res) => {
   res.render('contact');
-});
-
-app.get('/clients', (req, res) => {
-  res.render('clients');
 });
 
 app.get('/login', (req, res) => {
@@ -104,6 +126,18 @@ app.post('/savecredentials', async (req, res) => {
 app.get('/basket', (req, res) => {
   // Logic to retrieve basket items from database
   const basketItems = []; 
+  res.render('basket', { basketItems });
+});
+*/
+app.get('/', homeController.renderHome);
+app.get('/products/:id', productController.renderProduct);
+app.get('/contact', (req, res) => res.render('contact'));
+app.get('/login', userController.renderLogin);
+app.post('/checklogin', userController.checkLogin);
+app.post('/savecredentials', userController.saveCredentials);
+app.get('/basket', (req, res) => {
+  // Logic to retrieve basket items from database
+  const basketItems = [];
   res.render('basket', { basketItems });
 });
 

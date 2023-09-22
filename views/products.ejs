@@ -15,18 +15,23 @@
 
   <h1>Product Page</h1>
 
-  <!-- List of Products -->
-  <ul>
+  <!-- Products Container -->
+  <div class="product-container">
       <% products.forEach(product => { %>
-          <li>
-              Product ID: <%= product.product_id %>, 
-              Carat: <%= product.carat %>, 
-              Cut: <%= product.cut %>, 
-              Color: <%= product.color %>, 
-              Price: <%= product.price %>
-          </li>
+          <div class="product-box">
+              <div class="product-details">
+                  <p>Product ID: <%= product.product_id %></p>
+                  <p>Carat: <%= product.carat %></p>
+                  <p>Cut: <%= product.cut %></p>
+                  <p>Color: <%= product.color %></p>
+                  <p>Price: $<%= (parseFloat(product.price) + 1000.00).toFixed(2) %></p>
+              </div>
+              <!-- product image here -->
+              <img src="/images/i-2.png" alt="" alt="Product Image">
+              <a href="#">Buy Now</a>
+          </div>
       <% }); %>
-  </ul>
+  </div>
 
   <%- include('layouts/footer'); -%>
   <%- include('layouts/scripts'); -%>
