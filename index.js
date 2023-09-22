@@ -6,11 +6,12 @@ const { body, validationResult } = require('express-validator');
 const session = require('express-session');
 const app = express();
 const port = process.env.PORT || 4000;
+const User = require('./models/users');
 
 // Inport Controllers
 const homeController = require('./controllers/homeController'); // Import the homeController
-const productController = require('./controllers/productController');
-const userController = require('./controllers/userController');
+const productController = require('./controllers/productController'); // Import the productController
+const userController = require('./controllers/userController');// Import the userController
 
 // Middleware
 app.use(express.json());
@@ -141,15 +142,20 @@ app.get('/basket', (req, res) => {
   res.render('basket', { basketItems });
 });
 
-// Error Routes
-// app.use((req, res) => {
-//   res.status(404).render('error', { errorMessage: 'Page not found' });
-// });
+// User registration and login routes
+app.get('/login', userController.renderLogin);
+app.post('/login', userController.checkLogin);
+app.post('/register', userController.saveCredentials);
 
-// app.use((err, req, res, next) => {
-//   console.error(err.stack);
-//   res.status(500).render('error', { errorMessage: 'Something broke!' });
-// });
+// Error Routes
+app.use((req, res) => {
+   res.status(404).render('error', { errorMessage: 'Page not found' });
+ });
+
+ app.use((err, req, res, next) => {
+   console.error(err.stack);
+   res.status(500).render('error', { errorMessage: 'Something broke!' });
+ });
 
 // Start server
 app.listen(port, () => {

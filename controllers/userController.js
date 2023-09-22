@@ -2,10 +2,12 @@ const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator');
 const { User } = require('../models/users');
 
+// Render the login page
 exports.renderLogin = (req, res) => {
   res.render('login');
 };
 
+// Handle user login
 exports.checkLogin = [
   body('email').isEmail().withMessage('Invalid email format'),
   body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long'),
@@ -37,6 +39,7 @@ exports.checkLogin = [
   },
 ];
 
+// Handle user registration
 exports.saveCredentials = async (req, res) => {
   const { email, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
