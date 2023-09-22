@@ -12,6 +12,7 @@ const User = require('./models/users');
 const homeController = require('./controllers/homeController'); // Import the homeController
 const productController = require('./controllers/productController'); // Import the productController
 const userController = require('./controllers/userController');// Import the userController
+const basketController = require('./controllers/basketController');// Import the BasketController
 
 // Middleware
 app.use(express.json());
@@ -21,7 +22,15 @@ app.use(session({ secret: 'your-secret-key', resave: false, saveUninitialized: t
 // Database connection
 mongoose.connect('mongodb://127.0.0.1:27017/DIAMOND_SHOP', {
   useNewUrlParser: true,
- // useUnifiedTopology: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+  console.log('Connected to MongoDB');
 });
 
 // express session 
@@ -32,6 +41,7 @@ app.use(session({
   //cookie: { secure: true }
 }))
 
+// Set global variable for user state
 global.loggedIn = null;
 global.userType = null;
 
@@ -136,16 +146,18 @@ app.get('/contact', (req, res) => res.render('contact'));
 app.get('/login', userController.renderLogin);
 app.post('/checklogin', userController.checkLogin);
 app.post('/savecredentials', userController.saveCredentials);
-app.get('/basket', (req, res) => {
-  // Logic to retrieve basket items from database
-  const basketItems = [];
-  res.render('basket', { basketItems });
-});
+app.get('/basket', basketController);
 
 // User registration and login routes
 app.get('/login', userController.renderLogin);
 app.post('/login', userController.checkLogin);
 app.post('/register', userController.saveCredentials);
+
+// Basket products add
+app.get('/basket', basketController.renderBasket); // Use renderBasket function
+app.post('/basket/add', basketController.addToBasket); // Add a product to the basket
+app.post('/basket/remove', basketController.removeFromBasket); // Remove a product from the basket
+
 
 // Error Routes
 app.use((req, res) => {
