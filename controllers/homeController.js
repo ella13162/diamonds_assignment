@@ -1,10 +1,14 @@
 const { Product } = require('../models/products');
 
 exports.renderHome = async (req, res) => {
-  // Logic to fetch products from the database
   try {
+    // Fetch products from the database
     const products = await Product.find();
-    res.render('home', { products });
+
+    // Calculate the total price (for example, summing all product prices)
+    const totalPrice = products.reduce((acc, product) => acc + product.price, 0);
+
+    res.render('home', { products, totalPrice });
   } catch (error) {
     console.error(error);
     res.status(500).render('error', { errorMessage: 'Internal Server Error' });

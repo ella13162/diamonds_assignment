@@ -79,6 +79,42 @@
          </div>
       </div>
       <!-- end Best -->
+      <!-- price section -->
+      <section class="price_section layout_padding">
+         <div class="container">
+         <div class="heading_container">
+            <h2>
+               Our Jewellery Price
+            </h2>
+         </div>
+         <div class="price_container">
+            <!-- product container -->
+            <% products.forEach(product => { %>
+               <div class="product-box">
+                  <div class="product-details">
+                        <p>Product ID: <%= product.product_id %></p>
+                        <p>Carat: <%= product.carat %></p>
+                        <p>Cut: <%= product.cut %></p>
+                        <p>Color: <%= product.color %></p>
+                        <p>Price: $<%= (parseFloat(product.price) + 1000.00).toFixed(2) %></p>
+                  </div>
+                  <!-- product image here -->
+                  <img src="/images/i-2.png" alt="<%= product.name %>">
+                  <a href="#">Buy Now</a>
+               </div>
+            <% }); %>
+            </div>
+            <!-- end product container -->
+         <div class="d-flex justify-content-center">
+            <a href="" class="price_btn">
+               See More
+            </a>
+         </div>
+         </div>
+      </section>
+      <!-- end price section -->
+
+
       <%- include('layouts/footer'); -%>
       <%- include('layouts/scripts'); -%>
     
