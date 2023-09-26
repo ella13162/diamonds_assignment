@@ -10,20 +10,29 @@
     <ul id="basket-items">
         <% if (basketItems.length === 0) { %>
             <li>No items in the basket.</li>
-        <% } else { %>
-            <% basketItems.forEach(item => { %>
-                <li>
-                    Product ID: <%= item.product_id %>,
-                    Carat: <%= item.carat %>,
-                    Cut: <%= item.cut %>,
-                    Color: <%= item.color %>,
-                    Price: $<%= (parseFloat(item.price) + 1000.00).toFixed(2) %>,
-                    Quantity: <%= item.quantity %>
-                </li>
+            <% } else { %>
+                <% let total = 0; %>
+                <% basketItems.forEach(item => { %>
+                    <li>
+                        <img src="/images/<%= item.image %>" alt="<%= item.name %>" /> <!-- Add the image here -->
+                        Product ID: <%= item.product_id %>,
+                        Carat: <%= item.carat %>,
+                        Cut: <%= item.cut %>,
+                        Color: <%= item.color %>,
+                        Price: £<%= (parseFloat(item.price) + 1000.00).toFixed(2) %>,
+                        Quantity: <%= item.quantity %>
+                        <!-- Include a "Buy Again" button -->
+                        <button onclick="buyAgain('<%= item.product_id %>')">Buy Again</button>
+                    </li>
+                <% total += parseFloat(item.price); %>
             <% }); %>
+            <script>
+                // Set the total price in the HTML using JavaScript
+                document.getElementById("basket-total").textContent = "£" + (total + 1000.00).toFixed(2);
+            </script>
         <% } %>
     </ul>
-    <div>Total: $<span id="basket-total">0.00</span></div>
+    <div>Total: £<span id="basket-total">0.00</span></div>
     <%- include('layouts/footer'); -%>
     <%- include('layouts/scripts'); -%>
     <script src="/js/basket.js"></script>

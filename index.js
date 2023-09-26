@@ -53,17 +53,52 @@ app.use("*", (req,res,next)=>{
   next();
 })
 
-/* 
-Public folder serves the statis files like css, js, pics etc. We will create a public folder and put all our statis files there.
-Just add the below middlewear that let the express which folder contains the static files
-*/
-
 // Set view engine and static folder
 app.use(express.static('public'));
 // app.use(express.static(path.join(__dirname, 'public')));
 const ejs = require('ejs')
 app.set('view engine', 'ejs');
 // app.set('views', path.join(__dirname, 'views'));
+
+app.get('/', homeController.renderHome);
+app.get('/products/:id', productController.renderProduct);
+app.get('/contact', (req, res) => res.render('contact'));
+app.get('/login', userController.renderLogin);
+app.post('/checklogin', userController.checkLogin);
+app.post('/savecredentials', userController.saveCredentials);
+app.get('/basket', basketController);
+
+// User registration and login routes
+app.get('/login', userController.renderLogin);
+app.post('/login', userController.checkLogin);
+app.post('/register', userController.saveCredentials);
+
+// Basket products add
+app.get('/basket', basketController.renderBasket); // Use renderBasket function
+app.post('/basket/add', basketController.addToBasket); // Add a product to the basket
+app.post('/basket/remove', basketController.removeFromBasket); // Remove a product from the basket
+
+
+// Error Routes
+app.use((req, res) => {
+   res.status(404).render('error', { errorMessage: 'Page not found' });
+ });
+
+ app.use((err, req, res, next) => {
+   console.error(err.stack);
+   res.status(500).render('error', { errorMessage: 'Something broke!' });
+ });
+
+// Start server
+app.listen(port, () => {
+  console.log(`Server started on port: ${port}`);
+});
+
+
+/* 
+Public folder serves the statis files like css, js, pics etc. We will create a public folder and put all our statis files there.
+Just add the middleware that let the express which folder contains the static files
+*/
 
 /*
 // To receive the parameter, we need to install the body-parser package
@@ -140,36 +175,3 @@ app.get('/basket', (req, res) => {
   res.render('basket', { basketItems });
 });
 */
-app.get('/', homeController.renderHome);
-app.get('/products/:id', productController.renderProduct);
-app.get('/contact', (req, res) => res.render('contact'));
-app.get('/login', userController.renderLogin);
-app.post('/checklogin', userController.checkLogin);
-app.post('/savecredentials', userController.saveCredentials);
-app.get('/basket', basketController);
-
-// User registration and login routes
-app.get('/login', userController.renderLogin);
-app.post('/login', userController.checkLogin);
-app.post('/register', userController.saveCredentials);
-
-// Basket products add
-app.get('/basket', basketController.renderBasket); // Use renderBasket function
-app.post('/basket/add', basketController.addToBasket); // Add a product to the basket
-app.post('/basket/remove', basketController.removeFromBasket); // Remove a product from the basket
-
-
-// Error Routes
-app.use((req, res) => {
-   res.status(404).render('error', { errorMessage: 'Page not found' });
- });
-
- app.use((err, req, res, next) => {
-   console.error(err.stack);
-   res.status(500).render('error', { errorMessage: 'Something broke!' });
- });
-
-// Start server
-app.listen(port, () => {
-  console.log(`Server started on port: ${port}`);
-});
