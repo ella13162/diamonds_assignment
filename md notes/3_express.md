@@ -81,3 +81,18 @@ app.listen(port, () => {
 ---
 
 As in this stage port 4000 getting and sending each files: home, clients, contact, basket, login, product and error.
+
+# Step 5:
+Public folder serves the statis files like css, js, pics etc. Create a public folder and put all our statis files there.
+Add the middleware that let the express which folder contains the static files.
+
+---js
+app.use(express.static('public'))
+
+const ejs = require('ejs')
+app.set('view engine','ejs') 
+---
+
+
+
+

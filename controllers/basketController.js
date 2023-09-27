@@ -6,7 +6,7 @@ exports.renderBasket = (req, res) => {
   // Retrieve basket items from the session
   const basketItems = req.session.basket || [];
 
-  // Calculate total price (assuming each item has a 'price' property)
+  // Calculate total price 
   const totalPrice = basketItems.reduce((total, item) => total + item.price, 0);
 
   res.render('basket', { basketItems, totalPrice });
