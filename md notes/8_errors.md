@@ -18,7 +18,7 @@ Node. is v18.17.0
 [nodemon] app crashed - waiting for file changes before starting...
 ---
 
-After checking route.js by cliking on error route. error was related with the path in that case index.js suppose to be check for any errors in the code.
+After checking route.js by cliking on error route. error was related with the path in that case index.js suppose to be ***check for any errors in the code.***
 
 --- js
 app.get('/', homeController.renderHome);
@@ -55,8 +55,9 @@ app.listen(port, () => {
   console.log(`Server started on port: ${port}`);
 });
 ---
+
 As we had created controllers looks like that.
-Checking Controllers:
+# Step 2: Checking Controllers
 in homeController:
 ---
 
@@ -67,7 +68,7 @@ in homeController:
   }
 };
 ---
-was changed for:
+Was changed for:
 ---
     res.render('/', { products, totalPrice });
   } catch (error) {
@@ -76,7 +77,7 @@ was changed for:
   }
 };
 ---
-however there is still ERROR so we came back to original version.
+*** however there is still ERROR so we came back to original version. ***
 
 In users.js models for Schema for name: deleted 'reqired: true'
 and username: deleted 'required: true'
@@ -101,16 +102,17 @@ Node. js v18.17.0
 [nodemon] app crashed - waiting for file changes before starting...
 ---
  
-for line 69 edited:
+# Step 3: for line 69 edited
 
+adding renderBasket within the line
 --- js
 app.get('/basket', basketController.renderBasket);
 ---
 
-new Error:
+# Step 4: new Error
 
 in index.js we change for data connection:
-from
+ *** from *** 
 
 --- js
 // Database connection
@@ -121,7 +123,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/DIAMOND_SHOP', {
 });
 ---
 
-to
+ *** to ***
 --- js
 // Database connection
 mongoose.connect('mongodb://127.0.0.1:27017/DIAMOND_SHOP', {
