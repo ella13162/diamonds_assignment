@@ -1472,28 +1472,33 @@ background-position: center;
      flex-wrap: wrap;
      justify-content: space-between;
    }
- 
-   /* Add CSS styles for individual product boxes */
+
+   .product-grid {
+     display: grid;
+     grid-template-columns: reapeat(auto-fill, minmax(300px, 1fr));
+     gap: 20 px;
+   }
+  
    .product-box {
-     width: 30%; /* Adjust the width as needed */
-     margin: 0 0 20px 0; /* Add margin to separate products */
+     width: 30%; 
+     margin: 0 0 20px 0; 
      padding: 10px;
      border: 1px solid #ddd;
-     box-sizing: border-box; /* Ensure padding and border don't affect width */
+     box-sizing: border-box; 
    }
  
-   /* Add CSS styles for product details */
+   
    .product-details {
      margin-bottom: 10px;
    }
  
-   /* Add CSS styles for product image */
+   
    .product-box img {
      max-width: 100%;
      height: auto;
    }
  
-   /* Add CSS styles for Buy Now link */
+   
    .product-box a {
      display: block;
      text-align: center;
