@@ -76,4 +76,58 @@ was changed for:
   }
 };
 ---
-however there is still ERROR for path.
+however there is still ERROR so we came back to original version.
+
+In users.js models for Schema for name: deleted 'reqired: true'
+and username: deleted 'required: true'
+
+Error in inxed.js line 69 which is (app.get('/basket', basketController);):
+
+---
+[nodemon] watching paths) :
+[nodemon] watching extensions: js, mjs, cjs, json [nodemon] starting node index. js*
+C: \Users \ella1\OneDrive\Dokumenty\Solent_University\YEAR 2\Advance Database\assesment \Diamonds shop \node modules \express \lib\router \route. js: 211
+throw new Error (msg);
+Error: Route. get () requires a callback function but got a [object object]
+at Route. ‹computed> [as get] (C: \Users \ella1\OneDrive\Dokumenty\Solent University\YEAR 2\Advance Database \assesment \Diamonds shop \node modules \express \lib\router \route. js: 211:15) at app. ‹computed› [as get] (C: \users \ella1 \OneDrive \Dokumenty \Solent university\VEAR 2 \Advance Database \assesment\Diamonds shop \node modules \express \lib\application. js:499:19)
+at Object. ‹anonymous> (C: \Users \ella1 \oneDrive \Dokumenty\Solent_University\YEAR \Advance Database \assesment \Diamonds_ shop\index. js:69:5)
+at Module. compile (node: internal/modules/cis/loader: 1256:14)
+at Module. _extensions.. js (node: internal/modules/cjs/loader:1310:10)
+at Module.load (node: internal/modules/cis/loader:1119:32)
+at Module. load (node:internal/modules/cis/loader :960:12)
+at Function.executeUserEntryPoint [as runMain] (node: internal/modules/run main:81:12)
+at node: internal/main/run main module: 23:47
+Node. js v18.17.0
+[nodemon] app crashed - waiting for file changes before starting...
+---
+ 
+for line 69 edited:
+
+--- js
+app.get('/basket', basketController.renderBasket);
+---
+
+new Error:
+
+in index.js we change for data connection:
+from
+
+--- js
+// Database connection
+mongoose.connect('mongodb://127.0.0.1:27017/DIAMOND_SHOP', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
+---
+
+to
+--- js
+// Database connection
+mongoose.connect('mongodb://127.0.0.1:27017/DIAMOND_SHOP', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+---
+
+*** remember to updata node when making changes with database with terminal code: > node index.js***

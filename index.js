@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator');
 const session = require('express-session');
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 const User = require('./models/users');
 
 // Inport Controllers
@@ -23,7 +23,6 @@ app.use(session({ secret: 'your-secret-key', resave: false, saveUninitialized: t
 mongoose.connect('mongodb://127.0.0.1:27017/DIAMOND_SHOP', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
 });
 
 const db = mongoose.connection;
@@ -66,7 +65,7 @@ app.get('/contact', (req, res) => res.render('contact'));
 app.get('/login', userController.renderLogin);
 app.post('/checklogin', userController.checkLogin);
 app.post('/savecredentials', userController.saveCredentials);
-app.get('/basket', basketController);
+app.get('/basket', basketController.renderBasket);
 
 // User registration and login routes
 app.get('/login', userController.renderLogin);
@@ -94,11 +93,6 @@ app.listen(port, () => {
   console.log(`Server started on port: ${port}`);
 });
 
-
-/* 
-Public folder serves the statis files like css, js, pics etc. We will create a public folder and put all our statis files there.
-Just add the middleware that let the express which folder contains the static files
-*/
 
 /*
 // To receive the parameter, we need to install the body-parser package

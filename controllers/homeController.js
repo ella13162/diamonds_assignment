@@ -8,7 +8,7 @@ exports.renderHome = async (req, res) => {
     // Calculate the total price (for example, summing all product prices)
     const totalPrice = products.reduce((acc, product) => acc + product.price, 0);
 
-    res.render('/', { products, totalPrice });
+    res.render('home', { products, totalPrice });
   } catch (error) {
     console.error(error);
     res.status(500).render('error', { errorMessage: 'Internal Server Error' });
